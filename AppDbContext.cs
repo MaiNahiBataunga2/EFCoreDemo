@@ -1,12 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Test.Models;
+﻿using EFCore.Model;
+using Microsoft.EntityFrameworkCore;
 
-namespace Test
+namespace EFCore
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-       
-        public DbSet<Employee> Employees { get; set; }
+        public AppDbContext(DbContextOptions<AppDbContext> dbContext) : base(dbContext) { }
+
+
+        public DbSet<Users> users { get; set; }
     }
 }
